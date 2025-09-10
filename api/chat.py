@@ -7,6 +7,7 @@ import re
 from icalendar import Calendar, Event
 from datetime import datetime
 
+# Flask-App initialisieren
 app = Flask(__name__)
 CORS(app)
 
@@ -85,7 +86,7 @@ faq_db = {
 
 def send_reservation_request(request_data):
     """
-    Diese Funktion sendet eine E-Mail mit der Reservierungsanfrage.
+    Diese Funktion sendet eine E-Mail mit der Reservierungsanfrage und einem Kalenderanhang.
     """
     sender_email = os.environ.get("SENDER_EMAIL")
     sender_password = os.environ.get("SENDER_PASSWORD")
@@ -103,7 +104,7 @@ def send_reservation_request(request_data):
 
     # Text der E-Mail
     email_text = f"""
-    Hallo Geschäftsführer,
+    Hallo Team,
     
     Sie haben eine neue Tischreservierungsanfrage erhalten:
     
@@ -117,6 +118,29 @@ def send_reservation_request(request_data):
     """
     msg.set_content(email_text)
     
+    # Erstelle den Kalendereintrag
+    cal = Calendar()
+    event = Event()
+
+    try:
+        start_time_str = request_data.get('date_time')
+        # Annahme: request_data['date_time'] hat das Format 'TT.MM.JJJJ HH:MM'
+        start_time = datetime.strptime(start_time_str, '%d.%m.%Y %H:%M')
+    except (ValueError, TypeError) as e:
+        print(f"Fehler bei der Konvertierung des Datums: {e}")
+        return False
+
+    event.add('dtstart', start_time)
+    event.add('summary', f"Tischreservierung für {request_data.get('name', 'N/A')}")
+    event.add('description', f"Personen: {request_data.get('personen', 'N/A')}\nSonderwünsche: {request_data.get('wunsch', 'N/A')}\nE-Mail: {request_data.get('email', 'N/A')}")
+    event.add('location', 'Musterstraße 12, 10115 Berlin')
+    
+    cal.add_component(event)
+
+    # Erstelle einen Anhang aus dem Kalenderobjekt
+    ics_file = cal.to_ical()
+    msg.add_attachment(ics_file, maintype='text', subtype='calendar', filename='Tischreservierung.ics')
+
     # Sende die E-Mail
     try:
         with smtplib.SMTP_SSL("smtp.web.de", 465) as smtp:
@@ -127,8 +151,10 @@ def send_reservation_request(request_data):
         print(f"Fehler beim Senden der E-Mail: {e}")
         return False
 
-# Neue Funktion zum Protokollieren von nicht beantworteten Fragen
 def log_unanswered_query(query):
+    """
+    Protokolliert Anfragen, auf die der Chatbot keine Antwort finden konnte.
+    """
     try:
         with open("unanswered_queries.log", "a", encoding="utf-8") as f:
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -138,6 +164,9 @@ def log_unanswered_query(query):
 
 @app.route('/api/chat', methods=['POST'])
 def chat_handler():
+    """
+    Haupt-Handler für die Anfragen.
+    """
     try:
         if not request.is_json:
             return jsonify({"error": "Fehlende JSON-Nachricht"}), 400
@@ -154,8 +183,8 @@ def chat_handler():
         # Überprüfe den aktuellen Konversationsstatus
         if current_state == "initial":
             
-            # WICHTIG: Prüfe zuerst auf Keywords für die Tischreservierung
-            if any(keyword in user_message for keyword in ["tisch reservieren", "reservierung tätigen", "platz buchen"]):
+            # Prüfe zuerst auf Keywords für die Tischreservierung
+            if any(keyword in user_message for keyword in ["tisch reservieren", "reservierung tätigen", "tischreservierung"]):
                 response_text = "Möchten Sie eine Tischreservierung vornehmen? Bitte antworten Sie mit 'Ja' oder 'Nein'."
                 user_states[user_ip] = {"state": "waiting_for_confirmation_reservation"}
             else:
