@@ -208,7 +208,7 @@ def send_appointment_request(request_data):
 
     # Erstelle einen Anhang aus dem Kalenderobjekt
     ics_file = cal.to_ical()
-    msg.add_attachment(ics_file, maintype='text', subtype='calendar', filename='Termin.ics')
+    msg.add_attachment(ics_file, maintype='text', subtype='calendar', filename='Reservierung.ics')
     
     # Sende die E-Mail
     try:
@@ -289,7 +289,7 @@ def chat_handler():
             email_regex = r'^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
             if re.match(email_regex, user_message):
                 user_states[user_ip]["email"] = user_message
-                response_text = "Alles klar. Für wie viele Personen möchten Sie reservieren?""
+                response_text = "Alles klar. Für wie viele Personen möchten Sie reservieren?"
                 user_states[user_ip]["state"] = "waiting_for_personen"
             else:
                 response_text = "Das scheint keine gültige E-Mail-Adresse zu sein. Bitte geben Sie eine korrekte E-Mail-Adresse ein."
@@ -351,4 +351,5 @@ def chat_handler():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
