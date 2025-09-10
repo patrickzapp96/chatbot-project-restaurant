@@ -21,43 +21,43 @@ faq_db = {
             "id": 1,
             "kategorie": "Öffnungszeiten",
             "titel": "Öffnungszeiten",
-            "keywords": ["öffnungszeiten", "wann", "geöffnet", "offen", "arbeitszeit"],
+            "keywords": ["öffnungszeiten", "wann", "geöffnet", "offen", "arbeitszeiten"],
             "antwort": "Wir sind Montag bis Samstag von 12:00 bis 22:00 Uhr und Sonntag von 12:00 bis 21:00 Uhr für Sie geöffnet. Die Küche schließt 30 Minuten vor Ende der Öffnungszeiten."
         },
         {
             "id": 2,
             "kategorie": "Reservierung",
             "titel": "Tisch reservieren",
-            "keywords": ["tisch", "reservieren", "buchen", "platz", "reservierung", "online"],
-            "antwort": "Sie können durch die Eingabe von 'tisch reservieren' einen Tisch reservieren oder uns direkt unter 030-123456 anrufen."
+            "keywords": ["reservieren", "tisch", "buchen", "platz", "reservierung", "online"],
+            "antwort": "Sie können mit der Eingabe 'tischreservierung' eine Reservierungsanfrage stellen oder uns direkt unter 030-98765432 anrufen."
         },
         {
             "id": 3,
             "kategorie": "Allgemein",
             "titel": "Adresse",
-            "keywords": ["adresse", "wo", "anschrift", "finden", "lage"],
+            "keywords": ["adresse", "wo", "anschrift", "finden", "lage", "standort"],
             "antwort": "Unsere Adresse lautet: Musterstraße 12, 10115 Berlin. Wir befinden uns in der Nähe des Stadtparks."
         },
         {
             "id": 4,
             "kategorie": "Speisekarte",
-            "titel": "Speisekarte und Preise",
-            "keywords": ["speisekarte", "menü", "gerichte", "essen", "karte", "preise", "kosten"],
-            "antwort": "Unsere Speisekarte finden Sie auf unserer Website. Wir bieten eine breite Auswahl an Gerichten zu fairen Preisen an."
+            "titel": "Speisekarte",
+            "keywords": ["speisekarte", "menü", "gerichte", "essen", "karte"],
+            "antwort": "Unsere Speisekarte finden Sie auf unserer Website. Wir wechseln die Gerichte saisonal und bieten auch eine Wochenkarte mit besonderen Empfehlungen an."
         },
         {
             "id": 5,
-            "kategorie": "Zahlung",
-            "titel": "Zahlungsmethoden",
-            "keywords": ["zahlung", "karte", "bar", "visa", "mastercard", "paypal", "kartenzahlung", "kontaktlos", "bezahlen"],
-            "antwort": "Sie können bar, mit EC-Karte, Kreditkarte (Visa/Mastercard) und kontaktlos per Handy bezahlen."
+            "kategorie": "Spezialitäten",
+            "titel": "Spezialitäten des Hauses",
+            "keywords": ["spezialitäten", "empfehlung", "besonderheit", "hausgericht"],
+            "antwort": "Unsere Spezialität ist das 'Muster-Filet' vom Grill. Fragen Sie unser Service-Team nach den aktuellen Empfehlungen des Küchenchefs."
         },
         {
             "id": 6,
-            "kategorie": "Allgemein",
-            "titel": "Parkmöglichkeiten",
-            "keywords": ["parkplätze", "parkplatz", "parken", "auto", "stellplatz"],
-            "antwort": "Es gibt öffentliche Parkplätze in den umliegenden Straßen. Ein Parkhaus befindet sich nur 5 Gehminuten entfernt."
+            "kategorie": "Zahlung",
+            "titel": "Zahlungsmethoden",
+            "keywords": ["zahlung", "karte", "bar", "visa", "mastercard", "paypal", "kartenzahlung"],
+            "antwort": "Sie können bei uns bar, mit EC-Karte, Kreditkarte (Visa, Mastercard) oder per kontaktloser Zahlung bezahlen."
         },
         {
             "id": 7,
@@ -69,9 +69,9 @@ faq_db = {
         {
             "id": 8,
             "kategorie": "Allgemein",
-            "titel": "Haustiere",
-            "keywords": ["hund", "haustier", "tiere"],
-            "antwort": "Haustiere sind in unserem Innenbereich leider nicht gestattet. Auf unserer Außenterrasse sind angeleinte Hunde willkommen."
+            "titel": "Raucherbereich",
+            "keywords": ["rauchen", "raucher", "raucherbereich"],
+            "antwort": "Unser Restaurant ist ein Nichtraucher-Restaurant. Sie können jedoch auf unserer Außenterrasse rauchen."
         },
         {
             "id": 9,
@@ -79,9 +79,79 @@ faq_db = {
             "titel": "Gutscheine kaufen",
             "keywords": ["gutschein", "gutscheine", "verschenken", "geschenk"],
             "antwort": "Ja, Sie können bei uns Gutscheine kaufen – das ideale Geschenk für Freunde und Familie!"
+        },
+        {
+            "id": 10,
+            "kategorie": "Allgemein",
+            "titel": "Parkmöglichkeiten",
+            "keywords": ["parkplätze", "parkplatz", "parken", "auto"],
+            "antwort": "Es gibt öffentliche Parkplätze in den umliegenden Straßen. Ein Parkhaus befindet sich nur 5 Gehminuten entfernt."
+        },
+        {
+            "id": 11,
+            "kategorie": "Allgemein",
+            "titel": "Kinder und Familien",
+            "keywords": ["kinder", "familien", "kinderstuhl", "kinderkarte"],
+            "antwort": "Familien sind bei uns herzlich willkommen. Wir haben Kinderstühle und eine spezielle Kinderkarte."
+        },
+        {
+            "id": 12,
+            "kategorie": "Allgemein",
+            "titel": "Kontakt",
+            "keywords": ["kontakt", "kontaktdaten", "telefonnummer", "telefon", "nummer"],
+            "antwort": "Sie erreichen uns telefonisch unter 030-98765432 oder per E-Mail unter info@restaurant-muster.de."
+        },
+        {
+            "id": 13,
+            "kategorie": "Feiern",
+            "titel": "Besondere Anlässe",
+            "keywords": ["feiern", "geburtstag", "hochzeit", "veranstaltung", "event"],
+            "antwort": "Gerne richten wir Ihre Veranstaltung aus. Für Anfragen zu größeren Gruppen oder privaten Feiern kontaktieren Sie uns bitte."
+        },
+        {
+            "id": 14,
+            "kategorie": "Service",
+            "titel": "Speisen zum Mitnehmen",
+            "keywords": ["mitnehmen", "take away", "to go", "abholen"],
+            "antwort": "Ja, Sie können alle Gerichte von unserer Speisekarte auch zum Mitnehmen bestellen. Rufen Sie uns am besten vorher an, um die Wartezeit zu verkürzen."
+        },
+        {
+            "id": 15,
+            "kategorie": "Service",
+            "titel": "WLAN-Zugang",
+            "keywords": ["wlan", "internet", "wifi", "zugang"],
+            "antwort": "Kostenloses WLAN steht unseren Gästen zur Verfügung. Fragen Sie unser Personal nach dem Passwort."
+        },
+        {
+            "id": 16,
+            "kategorie": "Allgemein",
+            "titel": "Kleiderordnung",
+            "keywords": ["kleiderordnung", "dresscode", "kleidung"],
+            "antwort": "Es gibt bei uns keine strenge Kleiderordnung. Sie sind in gepflegter Freizeitkleidung oder Business Casual herzlich willkommen."
+        },
+        {
+            "id": 17,
+            "kategorie": "Allgemein",
+            "titel": "Haustiere",
+            "keywords": ["hund", "haustier", "tiere"],
+            "antwort": "Haustiere sind in unserem Innenbereich leider nicht gestattet. Auf unserer Außenterrasse sind angeleinte Hunde willkommen."
+        },
+        {
+            "id": 18,
+            "kategorie": "Feiern",
+            "titel": "Geschäftsessen und Tagungen",
+            "keywords": ["geschäftsessen", "firmenfeier", "tagung", "meeting"],
+            "antwort": "Wir bieten einen separaten Raum für Geschäftsessen und kleinere Tagungen. Bitte kontaktieren Sie uns, um Details und Menüoptionen zu besprechen."
+        },
+        {
+            "id": 19,
+            "kategorie": "Menü",
+            "titel": "Weinkarte",
+            "keywords": ["weinkarte", "wein", "rotwein", "weißwein"],
+            "antwort": "Ja, wir führen eine sorgfältig ausgewählte Weinkarte mit regionalen und internationalen Weinen, die perfekt zu unseren Gerichten passen."
         }
     ],
-    "fallback": "Das weiß ich leider nicht. Bitte rufen Sie uns direkt unter 030-123456 an, wir helfen Ihnen gerne persönlich weiter."
+    "fallback": "Das weiß ich leider nicht. Bitte rufen Sie uns direkt unter 030-98765432 an, wir helfen Ihnen gerne persönlich weiter."
 }
 
 def send_reservation_request(request_data):
@@ -184,7 +254,7 @@ def chat_handler():
         if current_state == "initial":
             
             # Prüfe zuerst auf Keywords für die Tischreservierung
-            if any(keyword in user_message for keyword in ["tisch reservieren", "reservierung tätigen", "tischreservierung"]):
+            if any(keyword in user_message for keyword in ["tischreservierung"]):
                 response_text = "Möchten Sie eine Tischreservierung vornehmen? Bitte antworten Sie mit 'Ja' oder 'Nein'."
                 user_states[user_ip] = {"state": "waiting_for_confirmation_reservation"}
             else:
@@ -214,7 +284,7 @@ def chat_handler():
                 response_text = "Gerne. Wie lautet Ihr vollständiger Name?"
                 user_states[user_ip]["state"] = "waiting_for_name"
             elif user_message in ["nein", "abbrechen", "falsch"]:
-                response_text = "Die Reservierungsanfrage wurde abgebrochen. Falls Sie die Eingabe korrigieren möchten, beginnen Sie bitte erneut mit 'tisch reservieren'."
+                response_text = "Die Reservierungsanfrage wurde abgebrochen. Falls Sie die Eingabe korrigieren möchten, beginnen Sie bitte erneut mit 'tischreservierung'."
                 user_states[user_ip]["state"] = "initial"
             else:
                 response_text = "Bitte antworten Sie mit 'Ja' oder 'Nein'."
@@ -279,7 +349,7 @@ def chat_handler():
                 user_states[user_ip]["state"] = "initial"
             
             elif user_message in ["nein", "abbrechen", "falsch"]:
-                response_text = "Die Reservierungsanfrage wurde abgebrochen. Falls Sie die Eingabe korrigieren möchten, beginnen Sie bitte erneut mit 'tisch reservieren'."
+                response_text = "Die Reservierungsanfrage wurde abgebrochen. Falls Sie die Eingabe korrigieren möchten, beginnen Sie bitte erneut mit 'tischreservierung'."
                 user_states[user_ip]["state"] = "initial"
             
             else:
@@ -293,3 +363,4 @@ def chat_handler():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
